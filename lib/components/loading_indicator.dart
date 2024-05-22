@@ -53,9 +53,9 @@ class _LoadingIndicatorState extends State<LoadingIndicator> {
   }
 
   @override
-  void deactivate() {
+  void dispose() {
     LoadingIndicator._state = null;
-    super.deactivate();
+    super.dispose();
   }
 
   @override
