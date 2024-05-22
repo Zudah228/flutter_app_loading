@@ -19,7 +19,7 @@ class LoadingIndicator extends StatefulWidget {
   const LoadingIndicator({super.key});
 
   static Future<void> show(Future<void> Function() cb) async {
-    if (_state == null) {
+    if (_state == null || _state!.mounted) {
       throw FlutterError(
         'LoadingIndicator.show() was called \n'
         'No State of LoadingIndicator widget has created.',
