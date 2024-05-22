@@ -2,6 +2,19 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+/// ```
+/// MaterialApp(
+///   builder: (context, child) {
+///     return Stack(
+///       children: [
+///         Positioned.fill(child: child!),
+///         // place after [child] to cover the entire screen.
+///         const Positioned.fill(child: LoadingIndicator()),
+///       ]
+///     );
+///   },
+/// )
+/// ```
 class LoadingIndicator extends StatefulWidget {
   const LoadingIndicator({super.key});
 
