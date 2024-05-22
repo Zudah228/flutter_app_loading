@@ -41,9 +41,9 @@ class _LoadingIndicatorState extends State<LoadingIndicator> {
   Future<void> _show(Future<void> Function() cb) async {
     _isLoadingNotifier.value = true;
 
-    await cb();
-
-    _isLoadingNotifier.value = false;
+    await cb().whenComplete(() {
+      _isLoadingNotifier.value = false;
+    });
   }
 
   @override
